@@ -28,8 +28,12 @@ This really isn't good code! I wouldn't recommend using it for anything - it was
 
 ## Assets
 
-The assets (images, text files) that affect gameplay are included in the assets folder - the game creates a virtual HDD using the subfolder there. All other assets (custom art, custom music) are not included - I may distribute them later.
+The assets (images, text files) that affect gameplay are included in the assets folder - the game creates a virtual HDD using the subfolder there.
+
+All other assets were created by me for the gamejam (custom art, custom music) but not included - I may distribute them later, but depends if I turn this into a full (commercial) game after the jam.
 
 # License
 
-All rights reserved. You're free to read the source and use it for self-learning and inspiration, but I highly recommend you then go write your own (better!) versions.
+To be decided later - but until then: All rights reserved.
+
+You're free to read the source and use it for self-learning and inspiration, but I highly recommend you write your own (better!) versions.
