@@ -1,0 +1,48 @@
+.window {
+    height: 100%; /* REQUIRED to make sure the window is only sized by RND and not by child-items growing it */
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    background-color: rgba(30, 30, 30, 0);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .window-titlebar {
+    background-color: #333;
+    color: white;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    cursor: move;  /* Indicates that the title bar is draggable */
+    user-select: none;
+  }
+  
+  .window-content {
+    flex-grow: 1;
+    overflow: auto; /* This makes the content scrollable */
+  max-height: 100%; /* Ensures the content area doesn't expand beyond the window's height */
+  box-sizing: border-box; /* Ensure padding is included in the element's width and height */
+
+    
+    background: rgba(3, 3, 3, 0.624); /* translucent for ALL windows by default */
+  }
+  
+  .installer-window {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+  
+  .installer-progress {
+    height: 4px;
+    background: #e0e0e0;
+    border-radius: 2px;
+    overflow: hidden;
+    margin: 16px 0;
+  }
+  
+  .installer-progress-bar {
+    height: 100%;
+    background: #2196f3;
+    transition: width 0.3s ease-in-out;
+  }

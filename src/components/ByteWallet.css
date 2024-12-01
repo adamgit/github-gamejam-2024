@@ -1,0 +1,79 @@
+/* ByteWallet.css */
+
+.byte-wallet-window {
+    /* Override default window background */
+    background: linear-gradient(145deg, #1a1b1e 0%, #141518 100%) !important;
+    border: 1px solid rgba(52, 211, 153, 0.2) !important; /* Subtle green glow */
+    box-shadow: 0 0 20px rgba(52, 211, 153, 0.1) !important;
+  }
+  
+  /* Smooth animation for balance changes */
+  @keyframes pulseBalance {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  
+  .balance-pulse {
+    animation: pulseBalance 0.5s ease-in-out;
+  }
+  
+  /* Custom scrollbar for transaction list */
+  .transaction-list::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  .transaction-list::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 2px;
+  }
+  
+  .transaction-list::-webkit-scrollbar-thumb {
+    background: rgba(52, 211, 153, 0.3);
+    border-radius: 2px;
+  }
+  
+  .transaction-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(52, 211, 153, 0.5);
+  }
+  
+  /* Glow effect for icons */
+  .transaction-icon {
+    filter: drop-shadow(0 0 2px currentColor);
+  }
+  
+  /* Transaction item hover effect */
+  .transaction-item {
+    transition: background-color 0.2s ease;
+  }
+  
+  .transaction-item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  /* Window title bar override for wallet */
+  .byte-wallet-titlebar {
+    background: linear-gradient(90deg, #1a1b1e 0%, #141518 100%) !important;
+    border-bottom: 1px solid rgba(52, 211, 153, 0.2);
+  }
+  
+  /* Make sure text is crisp */
+  .wallet-text {
+    text-rendering: geometricPrecision;
+  }
+  
+  /* Animation for new transactions */
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .new-transaction {
+    animation: slideIn 0.3s ease-out forwards;
+  }

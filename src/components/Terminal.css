@@ -1,0 +1,85 @@
+/* Terminal container */
+.terminal {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: rgba(30, 30, 30, 0.89);
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    box-sizing: border-box;
+    padding-left: 5px;
+  }
+  
+  /* Output area */
+  .terminal-output {
+    flex-grow: 1;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    padding-right: 10px;  /* Ensure padding to avoid scrollbar overlap */
+    margin-bottom: 3px;
+
+    /* Scrollbar styling */
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #555 #1e1e1e; /* Firefox */
+
+  backdrop-filter: blur(3px); /* Apply blur effect */
+  -webkit-backdrop-filter: blur(3px); /* For Safari compatibility */
+
+  display: flex;
+  flex-direction: column;   /* Flex layout for child items (messages) */
+  max-height: 100%;
+  }
+
+  /* This makes sure that the content grows from the bottom when there’s free space
+  *
+  * This is an ugly hack for the fact CSS (I don't know why - it shiouldn't) refuses
+  to overflow even when we've explicitly told it to overflow - flexbox does NOT prevent
+  overflow, so why does the browser do this?
+  *
+  * Seems to be one of those bugs in Chrome that the spec maintainers accepted even though
+  * its stupid and makes CSS unnecessarily difficult (Breaking its own rules)
+  */
+.terminal-output::before {
+    content: "";
+    flex-grow: 1;
+    /* This pushes the actual content to the bottom */
+  }
+
+  /* Webkit-based browsers (Chrome, Safari, etc.) */
+.terminal-output::-webkit-scrollbar {
+  width: 8px;
+  background-color: #1e1e1e; /* Dark background for scrollbar */
+}
+
+.terminal-output::-webkit-scrollbar-thumb {
+  background-color: #555; /* Darker thumb */
+  border-radius: 10px; /* Rounded edges */
+}
+
+.terminal-output::-webkit-scrollbar-thumb:hover {
+  background-color: #777; /* Lighter on hover */
+}
+  
+  /* Input area styled to look like a prompt */
+  .terminal-input {
+    display: flex;
+    align-items: center;
+  }
+  
+  .terminal-input .prompt {
+    margin-right: 5px;
+    color: #00ff00;
+  }
+  
+  .terminal-input input {
+    background-color: transparent;
+    border: none;
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    flex-grow: 1;
+    outline: none;
+  }
+  

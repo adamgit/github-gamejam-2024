@@ -1,0 +1,111 @@
+.intro-screen {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .intro-background {
+    position: absolute;
+    inset: 0;
+    
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .intro-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+  }
+  
+  .intro-content {
+    position: relative;
+    z-index: 10;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+    padding: 2rem;
+  }
+  
+  .intro-warning {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 50;
+  }
+  
+  .intro-warning-box {
+    max-width: 600px;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 0, 0, 0.2);
+    border-radius: 8px;
+    color: white;
+  }
+  
+  .intro-title {
+    color: #4ade80;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .intro-button {
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    border: none;
+    background-color: #4ade80;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 2rem auto;
+    transition: transform 0.2s, background-color 0.2s;
+  }
+  
+  .intro-button:hover {
+    background-color: #22c55e;
+    transform: scale(1.05);
+  }
+  
+  .warning-button {
+    background-color: #ef4444;
+  }
+  
+  .warning-button:hover {
+    background-color: #dc2626;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+  
+  .delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .delay-400 {
+    animation-delay: 400ms;
+  }

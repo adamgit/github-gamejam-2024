@@ -1,0 +1,98 @@
+.whassup-container {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    background-color: #f5f5f5;
+    transition: transform 0.3s ease;
+  }
+
+  .whassup-container.chat-open {
+    transform: translateX(0); /* Ensure the chat container stays in place */
+    transition: transform 0.3s ease;
+  }
+  
+  /* You can add more visual effects if needed, like changing background, etc. */
+  .whassup-container.chat-open .user-list {
+    background-color: #f0f0f0; /* Example: Dim the background of the minimized user list */
+  }
+  
+  .whassup-container.chat-open .chat-window {
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* Add shadow to distinguish the chat window */
+    transform: translateX(0); /* Slide chat into view */
+  }
+  
+  .user-list {
+    width: 30%;
+    background-color: #e0e0e0;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    transition: width 0.3s ease;
+  }
+  .user-list.minimized {
+    width: 60px; /* Shrink to just show avatars */
+  }
+  
+  .user-avatar {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  .user-avatar .MuiTypography-root {
+    margin-left: 10px;
+  }
+  
+  .chat-window {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    transition: transform 0.3s ease; /* Slide effect for chat window */
+  transform: translateX(100%); /* Start with chat off-screen */
+  }
+  
+  .chat-header {
+    background-color: #075e54;
+    color: white;
+    display: flex;
+  align-items: center;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .chat-message {
+    margin: 2px 0;
+    padding: 4px 7px;
+    border-radius: 10px;
+    max-width: 60%;
+  }
+  
+  .from-user {
+    background-color: #daf8cb; /* Light green for the user's messages */
+    align-self: flex-end;
+    margin-left: auto;
+  }
+  
+  .from-other {
+    background-color: #f1f0f0; /* Light gray for messages from others */
+    align-self: flex-start;
+    margin-right: auto;
+  }
+  
+  .chat-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    height: 300px; /* Set a height for the chat window */
+    overflow-y: auto;
+    padding: 10px;
+  }
+  
+  .chat-input {
+    display: flex;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  }

@@ -1,0 +1,78 @@
+.desktop-icons-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;  /* Allow clicks to pass through container */
+}
+
+.desktop-icons {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    gap: 10px;
+    pointer-events: auto;  /* Re-enable clicks on icon groups */
+    position: absolute; /* so we can have it as a separate layer */
+  }
+  
+  .desktop-icon {
+    width: 80px;
+    margin: 10px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .desktop-icons-apps {
+    top: 0;
+    left: 0;
+    flex-direction: row;
+    z-index: 1;
+  }
+
+  .desktop-icons-debug {
+    bottom: 0;
+    right: 0;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    /*background: rgba(0, 0, 0, 0.1);*/
+    background-color: rgba(0, 64, 128, 0.5);
+    border-radius: 8px;
+    z-index: 2;  /* Debug tools appear above regular apps */
+  }
+
+  .debug-tool-icon {
+    
+  }
+
+  .debug-tool-icon span .icon {
+    opacity: 0.8;
+    filter: sepia(0.9) brightness(2) contrast(0.5);
+  }
+
+  .debug-tool-icon:hover {
+    opacity: 1;
+  }
+
+  .icon {
+    font-size: 40px;
+  }
+
+  @keyframes installApp {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .application-icon.newly-installed {
+    animation: installApp 0.5s ease-out forwards;
+  }
